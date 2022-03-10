@@ -1,0 +1,245 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+  
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: black;
+    font-family: 'Montserrat';
+}
+
+.logo{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1024px){
+    .nav-links{
+        width: 50%;
+    }
+    .logo{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+body{
+	margin:0;
+	font-family: 'Montserrat';
+}
+
+.team-section{
+	background-color:white;
+	min-height: 100vh;
+	padding:10px 15px 30px;
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.team-section .section-title{
+	flex-basis: 100%;
+	max-width: 100%;
+	margin-bottom: 70px;
+}
+
+.team-section .section-title h1{
+	font-size: 40px;
+	text-align: center;
+	margin:0;
+	color: black;
+	font-weight: 700;
+}
+
+.team-section .section-title p{
+	font-size:16px;
+	text-align: center;
+	margin:15px 0 0;
+	color:black;
+}
+.team-section .team-items{
+	
+	flex-basis: 100%;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.team-section .team-items .item{
+ flex-basis: calc(25% - 30px);
+ max-width: calc(25% - 30px);
+ transition: all .5s ease;
+ margin-bottom: 40px;
+}
+.team-section .team-items .item img{
+	display: block;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.team-section .team-items .item .inner{
+	position: relative;
+	z-index: 11;
+	padding:0 15px;
+}
+.team-section .team-items .item .inner .info{
+	background-color:red;
+	text-align: center;
+	padding: 20px 15px;
+	border-radius:8px;
+	transition: all .5s ease;
+	margin-top: -40px;
+}
+.team-section .team-items .item:hover  .info{
+    transform: translateY(-20px);
+}
+.team-section .team-items .item:hover{
+ transform: translateY(-10px);	
+}
+.team-section .team-items .item .inner .info h5{
+	margin:0;
+	font-size: 18px;
+	font-weight: 600;
+	color:black;
+}
+.team-section .team-items .item .inner .info p{
+	font-size: 16px;
+	font-weight: 400;
+	color:#c5c5c5;
+	margin:10px 0 0;
+}
+
+.team-section .team-items .item .inner .info .social-links{
+	padding-top: 15px;
+}
+
+.team-section .team-items .item .inner .info .social-links a{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-color: black;
+	color:red;
+	border-radius: 50%;
+	margin:0 2px;
+	text-align: center;
+	line-height: 32px;
+	font-size:16px;
+	transition: all .5s ease;
+}
+
+.team-section .team-items .item .inner .info .social-links a:hover{
+	box-shadow: 0 0 10px #000;
+}
+
+/*responsive*/
+@media(max-width: 991px){
+	.team-section .team-items .item{
+      flex-basis: calc(50% - 30px);
+       max-width: calc(50% - 30px);
+
+   }
+}
+
+@media(max-width: 767px){
+	.team-section .team-items .item{
+      flex-basis: calc(100%);
+       max-width: calc(100%);
+
+   }
+}
