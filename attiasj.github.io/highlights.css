@@ -1,0 +1,223 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+  
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: black;
+    font-family: 'Montserrat';
+}
+
+.logo{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1024px){
+    .nav-links{
+        width: 50%;
+    }
+    .logo{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+body{
+	margin:0;
+	font-family: 'Montserrat';
+}
+
+.container{
+    max-width: 950px;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.container .main-card{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200%;
+    transition: 1s;
+}
+
+#two:checked ~ .main-card{
+    margin-left: -100%;
+}
+
+.container .main-card .cards{
+    width: calc(100% / 2 - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    justify-content: space-between;
+}
+
+.main-card .cards .card{
+    width: calc(100% / 3 - 10px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+}
+
+.main-card .cards .card:hover{
+    transform: translateY(-15px);
+}
+
+.cards .card .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container .button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.button label{
+    height: 15px;
+    width: 15px;
+    border-radius: 20px;
+    background: black;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.button label.active{
+    width: 35px;
+}
+
+#one:checked ~ .button .one{
+    width: 35px;
+}
+
+#one:checked ~ .button .two{
+    width: 15px;
+}
+
+#two:checked ~ .button .one{
+    width: 15px;
+}
+
+#two:checked ~ .button .two{
+    width: 35px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .main-card .cards .card{
+      margin: 20px 0 10px 0;
+      width: calc(100% / 2 - 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .main-card .cards .card{
+      /* margin: 20px 0 10px 0; */
+      width: 100%;
+    }
+}
